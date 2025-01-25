@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="asset/LOGO.png" type="image/png">
+    <title>Loading Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #eee;
+            background: linear-gradient(135deg, #00416a, #00aaff);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .navbar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 45px;
+            height: 45px;
+            margin-right: 10px;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            font-size: 1.7rem;
+        }
+
+        .loading-container {
+            text-align: center;
+            color: white;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #ffcc00;
+            object-fit: cover;
+            animation: bounce 1.5s infinite;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            animation: fadeIn 2s;
+        }
+
+        .loader {
+            border: 10px solid rgba(255, 255, 255, 0.1);
+            border-top: 10px solid #ffcc00;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="asset/LOGO.png" alt="Logo">
+            <h1>DUSTIN KARL</h1>
+        </div>
+    </div>
+
+    <div class="loading-container">
+        <img src="asset/LOGO.png" alt="Logo" class="profile-img">
+        <h1>Loading...</h1>
+        <div class="loader"></div>
+        <p>We are getting everything ready for you.</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "homepage.html"; // Redirect to the main page after loading
+            }, 5000); // Adjust the time delay as necessary (in milliseconds)
+        };
+    </script>
+</body>
+</html>
